@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Upload an Image and Enter Inflow of Chemicals:</h2>
+
+<form action="/" method="post" enctype="multipart/form-data">
+  <label for="inflow_chemicals">Inflow Chemicals:</label>
+  <input type="text" id="inflow_chemicals" name="inflow_chemicals" placeholder="Chemical1,Chemical2,Chemical3">
+  <label for="inflow_quantities">Inflow Quantities:</label>
+  <input type="text" id="inflow_quantities" name="inflow_quantities" placeholder="Quantity1,Quantity2,Quantity3">
+  <input type="file" id="file" name="file">
+  <input type="submit" value="Upload and Analyze">
+</form>
+
+
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    {% if message %}
+    <h2>Probable Outflow of Chemicals:</h2>
+    <p>{{ message }}</p>
+    <img src="{{ img_path }}">
+    {% endif %}
+  </div>
+</div>
+
+</body>
+</html>
